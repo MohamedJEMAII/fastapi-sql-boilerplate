@@ -21,7 +21,7 @@ git clone https://github.com/ridwanspace/fastapi-sql-boilerplate.git
 2. Install dependencies:
 
 ```bash
-cd <repo-name>
+cd fastapi-sql-boilerplate
 pip install -r requirements.txt
 ```
 

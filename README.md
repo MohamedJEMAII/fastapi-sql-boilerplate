@@ -31,6 +31,83 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
+
+## Docker 
+
+**To manually create Image and Uploaded to Cloud Run for Deployment**
+
+### Docker (Create New Image)
+
+1. Docker Build
+``` bash
+docker build -t name-your-app .
+```
+
+2. Run Docker
+```bash
+docker run -p 8080:8080 name-your-app
+```
+
+3. Access your App
+Go to [http://localhost:8080/](http://localhost:8080/)
+
+### Docker (Push Image to Docker Hub)
+1. Create a Docker Hub Account: If you don't have one, sign up at Docker Hub.
+
+2. Login to Docker Hub: 
+```bash
+docker login
+```
+
+3. Tag your Image: 
+```bash
+docker tag name-your-app username/name-your-app:name-your-tag
+```
+
+4. Push your Image to Docker Hub: 
+```bash
+docker push username/name-your-up:name-your-tag
+```
+
+### Docker (Update and Push Image)
+1. Update your file
+
+2. Login to Docker Hub: 
+```bash
+docker login
+```
+
+3. Check images
+```bash
+docker images
+```
+
+4. Rebuild docker image
+```bash
+docker build -t username/name-your-app:name-your-tag .
+```
+
+5. Run the Updated Docker Image
+```bash
+docker run -d -p 8080:8080 username/name-your-app:name-your-tag
+```
+
+6. Push the Updated Image to Docker Hub
+```bash
+docker push username/name-your-app:name-your-tag
+```
+
+### Remove Docker Images
+1. Remove dangling images (images without a tag)
+```bash
+docker image prune
+```
+
+2. Remove specific images
+```bash
+docker rmi <image-id>
+```
+
 ## Usage
 
 Access the API documentation:

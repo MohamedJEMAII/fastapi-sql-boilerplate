@@ -108,6 +108,11 @@ docker image prune
 docker rmi <image-id>
 ```
 
+### Docker (Stop Running Container)
+```bash
+docker stop $(docker ps -a -q)
+```
+
 ## Usage
 
 Access the API documentation:
